@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 import java.util.Arrays;
-//18548ms (입력값 교재 예제)
+//4ms (입력값 교재 예제)
 public class Q7_1 {
     public static int[] dongbin;
     
