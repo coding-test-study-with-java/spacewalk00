@@ -5,3 +5,4 @@
 [[06 Sorting](https://www.notion.so/4-b11f8a990a244b10a06f8e22eb85ba2a)]
 [[07 BinaryTree](https://www.notion.so/5-07-Binary-Search-15df5ef838cf46f2afd58cf89476252b)]
 [[08 DynamicProgramming](https://www.notion.so/6-08-Dynamic-Programming-cd3792bbb59f440f866ea545fd4783ad)]
+[[09 ShortestPath](https://www.notion.so/7-09-Shortest-Path-710c387124a040f490113c37a6432162)]
