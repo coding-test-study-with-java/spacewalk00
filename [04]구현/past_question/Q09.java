@@ -1,5 +1,4 @@
-package past_question;
-//어려움... 
+//문자열 압축
 public class Q09 {
    
     public int solution(String s) {
