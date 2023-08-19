@@ -1,5 +1,3 @@
-package past_question;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,6 +6,7 @@ import java.util.List;
 import java.util.Collections;
 //import java.util.stream.Collectors;
 
+//문자열 재정렬
 public class Q08 {
     public static void main(String args[]) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
