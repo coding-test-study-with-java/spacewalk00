@@ -9,6 +9,8 @@
  * 1차 풀이: '이동하는 코드 누락'
  * 2차 풀이: 성공
  */
+import java.util.*;
+
 class Solution {
     public static final int[][] location = {
         {0,0}, {0,1}, {0,2}, 
