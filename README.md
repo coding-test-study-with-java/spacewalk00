@@ -1,7 +1,5 @@
 ## 과제리스트
 
-### 1주차
-* [보석쇼핑](https://school.programmers.co.kr/learn/courses/30/lessons/42587)
 ### 4주차
 * [소수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/42839)
 ### 5주차
