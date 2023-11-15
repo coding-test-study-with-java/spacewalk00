@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 /**
- * [행성 터널] 미완성 -> 개념 정리만 함.....
+ * [행성 터널] 
  * https://www.acmicpc.net/problem/2887
  * 
  * 신장 트리
@@ -27,39 +27,118 @@ import java.util.*;
  *   c. 처음 고른 정점과 선택된 간선에 연결된 정점까지 모든 연결된 정점에 연결된 
  *      간선 중 가장 비용이 작은 간선을 선택해 정점을 연결
  *   d. 모든 정점이 연결될 때 까지 2, 3번을 반복
- * 
- * 
- * 
  */
 
  class Planet {
+    int n; //행성당 넘버 부여
     int x;
     int y;
     int z;
 
-    public Planet(int x, int y, int z) {
+    public Planet(int n, int x, int y, int z) {
+        this.n = n; 
         this.x = x;
         this.y = y;
         this.z = z;
     }
  }
 
+ class Edge implements Comparable<Edge> {
+    int s;
+    int e;
+    int w;
+    Edge(int s, int e, int w) {
+        this.s = s;
+        this.e = e;
+        this.w = w;
+    }
+
+    @Override
+    public int compareTo(Edge e) {
+        return w - e.w;
+    }
+ }
+
  public class Q02 {
+    static int[] parent;
+    static List<Edge> edgeList;
+
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
-        List<Planet> list = new ArrayList<>();
+        //List<Planet> list = new ArrayList<>();
+        //PriorityQueue<Planet> pq = new PriorityQueue<>();
+        Planet[] planets = new Planet[N];
 
         for(int i=0; i<N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
             int z = Integer.parseInt(st.nextToken());
+            //list.add(new Planet(i, x, y, z));
+            planets[i] = new Planet(i, x, y, z);
+        }
+        edgeList = new ArrayList<>();
 
-            list.add(new Planet(x, y, z));
+        Arrays.sort(planets, new Comparator<Planet>() {
+            @Override
+            public int compare(Planet p1, Planet p2) {
+                return p1.x - p2.x;
+            }
+        }); //Arrays.sort(planets, (p1, p2) -> p1.x - p2.x);
+
+        for (int i = 0; i < N - 1; i++) {
+			int weight = Math.abs(planets[i].x - planets[i + 1].x);
+			edgeList.add(new Edge(planets[i].n, planets[i + 1].n, weight));
+		}
+
+		Arrays.sort(planets, (p1, p2) -> p1.y - p2.y);
+		for (int i = 0; i < N - 1; i++) {
+			int weight = Math.abs(planets[i].y - planets[i + 1].y);
+			edgeList.add(new Edge(planets[i].n, planets[i + 1].n, weight));
+		}
+
+		Arrays.sort(planets, (p1, p2) -> p1.z - p2.z);
+		for (int i = 0; i < N - 1; i++) {
+			int weight = Math.abs(planets[i].z - planets[i + 1].z);
+			edgeList.add(new Edge(planets[i].n, planets[i + 1].n, weight));
+		}
+
+        parent = new int[N];
+        for(int i=0; i<N; i++) {
+            parent[i] = i; //자기자신이 부모
         }
 
+        Collections.sort(edgeList);
+
+        int answer = 0;
+        for(Edge e : edgeList) {
+            //사이클 발생하는 간선 제외
+            if(find(e.s) != find(e.e)) {
+                answer += e.w;
+                union(e.s, e.e);
+            }
+        }
+        System.out.println(answer);
+    }
+
+    public static int find(int a) {
+        if(a == parent[a]) {
+            return a; //초기화된 상태 : 처음 등장한 상태는 자기 자신이 부모
+        }
+        parent[a] = find(parent[a]); //find 할 때마다 부모는 최상위 부모로 설정
+        return parent[a];
+    }
+
+    public static void union(int a, int b) {
+        int aRoot = find(a);
+        int bRoot = find(b);
+        if(aRoot != bRoot) {
+            parent[aRoot] = b;
+        } else {
+            return;
+        }
     }
  }
 
@@ -144,10 +223,6 @@ public class Q02 {
             union(start, end); //한쪽의 최상위 부모를 다른 한쪽의 부모로 설정
             result += oneNode.v; //선택된 간선이므로 간선의 비용을 더 함.
         }
-
         System.out.println(result);
-
-
-    }
-    
+    }    
 }*/
