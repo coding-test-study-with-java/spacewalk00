@@ -1,14 +1,5 @@
 ## 과제리스트
 
-### 5주차
-* [뒤에있는큰수찾기 82.6/100](https://school.programmers.co.kr/learn/courses/30/lessons/154539)
-* [등굣길 95/100](https://school.programmers.co.kr/learn/courses/30/lessons/42898)
-* [[3차] 파일명 정렬](https://school.programmers.co.kr/learn/courses/30/lessons/17686)
-### 6주차
-* [퇴사](https://www.acmicpc.net/problem/14501)
-* [이진 검색 트리](https://www.acmicpc.net/problem/5639)
-* [sql문제](https://leetcode.com/problems/product-sales-analysis-iii/?envType=study-plan-v2&envId=top-sql-50)
-
 ### 개념 노트
 [[03 Greedy](https://www.notion.so/1-03-Greedy-6947c4ad7a5f488ca67f0e559ad3c263?pvs=4)]
 <br>
