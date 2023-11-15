@@ -9,11 +9,6 @@
 * [이진 검색 트리](https://www.acmicpc.net/problem/5639)
 * [sql문제](https://leetcode.com/problems/product-sales-analysis-iii/?envType=study-plan-v2&envId=top-sql-50)
 
-### 7주차
-* [신입사원](https://www.acmicpc.net/problem/1946)
-* [행성터널](https://www.acmicpc.net/problem/2887)
-* [회의실 배정](https://www.acmicpc.net/problem/1931)
-
 ### 개념 노트
 [[03 Greedy](https://www.notion.so/1-03-Greedy-6947c4ad7a5f488ca67f0e559ad3c263?pvs=4)]
 <br>
