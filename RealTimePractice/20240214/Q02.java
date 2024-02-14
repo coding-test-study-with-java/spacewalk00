@@ -2,7 +2,7 @@
  * 스티커
  * https://www.acmicpc.net/problem/9465
  * 
- * test case는 맞았는데 틀림 뜸.
+ * MAX 값 초기화 문제 있었음.
  */
 import java.util.*;
 import java.io.*;
@@ -32,7 +32,7 @@ public class Main {
             dp[0][0] = weight[0][0];
             dp[1][0] = weight[1][0];
             
-            int max = Integer.MIN_VALUE;
+            int max = Math.max(dp[0][0], dp[1][0]);
             
             for(int j=1; j<N; j++) {
                 if(j == 1) {
